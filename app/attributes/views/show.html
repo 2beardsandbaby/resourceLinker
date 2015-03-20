@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <h1 class="panel-title pull-left">{{attributesCtl.attribute.name}}</h1>
+      <div class="btn-group pull-right">
+        <a class="btn btn-warning" href="#/attributes/{{attributesCtl.attribute._id}}/edit">Edit</a>
+        <a class="btn btn-danger" ng-click="attributesCtl.deleteAttribute(attributesCtl.attribute._id)">Delete</a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <section>
+              <p>{{attributesCtl.attribute.name}}</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

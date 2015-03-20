@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <h1 class="panel-title pull-left">Attributes</h1>
+      <div class="btn-group pull-right">
+        <a href="#/attributes/new" class="btn btn-success btn-sm">Create New Attribute</a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <section data-ng-repeat="attribute in attributesCtl.attributes">
+              <h2>{{attribute.name}}</h2>
+              <a href="#/attributes/{{attribute._id}}">view more</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

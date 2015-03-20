@@ -4,4 +4,8 @@ angular.module('MyApp')
       return $auth.isAuthenticated();
     };
 
+    $scope.navCreateAttribute = function() {
+      console.log('HI');
+    };
+
   });

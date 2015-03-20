@@ -6,7 +6,9 @@ angular.module('MyApp', [
   'auth',
   'profile',
   'posts',
-  'resources'
+  'resources',
+  'attributes'
+
 ])
 
 .config(function($routeProvider) {
