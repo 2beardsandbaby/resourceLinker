@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <h1 class="panel-title pull-left">{{resourcesCtl.resource.title}}</h1>
+      <div class="btn-group pull-right">
+        <a class="btn btn-warning" href="#/resources/{{resourcesCtl.resource._id}}/edit">Edit</a>
+        <a class="btn btn-danger" ng-click="resourcesCtl.deletePost(resourcesCtl.resource._id)">Delete</a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <section>
+              <p>{{resourcesCtl.resource.content}}</p>
+              <p ng-repeat="resourcesCtl.resource.attributes">{{attr}}</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

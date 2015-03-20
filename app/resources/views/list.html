@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <h1 class="panel-title pull-left">Resources</h1>
+      <div class="btn-group pull-right">
+        <a href="#/resources/new" class="btn btn-success btn-sm">Create New Resource</a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <section data-ng-repeat="resource in resourcesCtl.resources">
+              <h2>{{resource.title}}</h2>
+              <p>{{resource.link | limitTo: 255}}</p>
+              <a href="#/resources/{{resource._id}}">view more</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
