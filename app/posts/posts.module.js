@@ -6,7 +6,6 @@
       'ngRoute'
     ])
     .config(function($routeProvider) {
-      
       $routeProvider
         .when('/posts', {
           templateUrl: 'posts/views/list.html',

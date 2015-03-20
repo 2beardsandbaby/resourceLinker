@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h1>{{attributesCtl.attribute.title}}</h1></div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <section>
+            <div class="form-group">
+              <label for="attributeTitle">Attribute Name</label>
+              <input class="form-control" name="attributeTitle" type="text" data-ng-model="attributesCtl.attribute.name" value="{{attributesCtl.attribute.name}}">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" data-ng-click="attributesCtl.editAttribute(attributesCtl.attribute)">Update Attribute</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
