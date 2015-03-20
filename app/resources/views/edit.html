@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h1>{{resourcesCtl.resource.title}}</h1></div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <section>
+            <div class="form-group">
+              <label for="resourceTitle">Post Title</label>
+              <input class="form-control" name="resourceTitle" type="text" data-ng-model="resourcesCtl.resource.title" value="{{resourcesCtl.resource.title}}">
+            </div>
+            <div class="form-group">
+              <label for="resourceLink">Resource Link</label>
+              <input type="text" name="resourceLink" class="form-control" data-ng-model="resourcesCtl.resource.link">
+            </div>
+            <div class="form-group">
+              <label for="resourceAttributes">Resource Attributes</label>
+              <input ng-repeat="attr in resourcesCtl.resource.attributes" type="text" name="resourceAttributes" class="form-control" data-ng-model="attr">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" data-ng-click="resourcesCtl.editPost(resourcesCtl.resource)">Update Post</button>
+            </div>
+
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,8 @@ angular.module('MyApp', [
   'mgcrea.ngStrap',
   'auth',
   'profile',
-  'posts'
+  'posts',
+  'resources'
 ])
 
 .config(function($routeProvider) {
