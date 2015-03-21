@@ -20,10 +20,9 @@ router.route('/linkPreview')
     var description = $('meta[name="description"]').attr('content');
     var photo = $('body img').first().attr('src');
     var preview = {
+      title: $('title').text(),
       description: description,
-      photo: /^(http|https)?(:\/\/)?(www)?.?[a-z0-9-]+(.|:)([a-z0-9-]+)+([\/?].*)?$/.test(photo)
-        ? req.body.link + photo
-        : photo
+      photo: /^(http|https)/.test(photo) ? photo : req.body.link + photo
     };
 
     res.status(200).json(preview);
