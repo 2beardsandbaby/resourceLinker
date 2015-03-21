@@ -3,12 +3,12 @@ angular.module('MyApp', [
   'ngRoute',
   'ngSanitize',
   'mgcrea.ngStrap',
+  'isteven-multi-select',
   'auth',
   'profile',
   'posts',
   'resources',
   'attributes'
-
 ])
 
 .config(function($routeProvider) {
