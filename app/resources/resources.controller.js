@@ -46,6 +46,9 @@
         });
 
         resourcesCtl.createResource = function(newResource) {
+          newResource.title = $scope.preview.title;
+          newResource.photo = $scope.preview.photo;
+          newResource.description = $scope.preview.description;
           resourcesService.createResource(newResource);
           $location.path('/resources');
         };

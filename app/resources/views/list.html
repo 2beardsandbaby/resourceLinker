@@ -9,9 +9,10 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-sm-12">
-          <section data-ng-repeat="resource in resourcesCtl.resources">
-              <h2>{{resource.title}}</h2>
-              <p>{{resource.link | limitTo: 255}}</p>
+          <section class="resource-item" data-ng-repeat="resource in resourcesCtl.resources">
+              <h2>{{resource.metaTitle}}</h2>
+              <p><img class="thumb" ng-src="{{resource.photo}}" alt=""></p>
+              <p><a href="{{resource.link}}">{{resource.link | limitTo: 255}}</p>
               <a href="#/resources/{{resource._id}}">view more</a>
           </section>
         </div>

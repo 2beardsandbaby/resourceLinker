@@ -318,6 +318,17 @@ a {
   background-color: #125acd;
 }
 
+.thumb {
+  max-width: 150px;
+}
+.resource-item {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
 /*********************
 * Animations
 *********************/
