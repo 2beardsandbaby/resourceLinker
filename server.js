@@ -16,6 +16,7 @@ var User = require('./entities/User');
 var authRoutes = require('./routes/auth');
 var crudRoutes = require('./routes/apiCrud');
 var profileRoutes = require('./routes/profile');
+var linkPreviewRoutes = require('./routes/linkPreview');
 
 
 mongoose.connect(config.MONGO_URI);
@@ -47,6 +48,7 @@ app.use('/auth', authRoutes);
 app.use('/api', profileRoutes);
 // basic crud endpoints a la tiny-server
 app.use('/api/collections', crudRoutes);
+app.use('/preview/', linkPreviewRoutes);
 
 
 /*

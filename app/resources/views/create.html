@@ -7,21 +7,20 @@
       <div class="row">
         <div class="col-sm-12">
           <section>
+            <form name="linkForm" action="">
             <div class="form-group">
-              <label for="newTitle">Resource Title</label>
-              <input class="form-control" type="text" name="newTitle" data-ng-model="resource.title" placeholder="Title">
+              <label for="newTitle">Resource Link</label>
+              <input class="form-control" type="url" name="newlink" data-ng-model="resource.link" ng-model-options="{ updateOn: 'blur'}" placeholder="Link" required>
+              <div ng-if="!linkForm.newlink.$error.url && !linkForm.newlink.$pristine" ng-init="resourcesCtl.getPreview(resource)">
+                <img ng-src="{{preview.photo}}" alt="">
+                <p>{{preview.description}}</p>
+              </div>
             </div>
+
             <div class="form-group">
-              <label for="newContent">Resource Link</label>
-              <input class="form-control" name="newLink" data-ng-model="resource.link">
+              <button class="btn btn-primary" data-ng-click="resourcesCtl.getPreview(resource)">Create</button>
             </div>
-            <div class="form-group">
-              <label for="newContent">Resource Attributes</label>
-              <input class="form-control" name="newLink" data-ng-model="resource.attributes">
-            </div>
-            <div class="form-group">
-              <button class="btn btn-primary" data-ng-click="resourcesCtl.createLink(resource)">Create</button>
-            </div>
+          </form>
 
           </section>
         </div>
