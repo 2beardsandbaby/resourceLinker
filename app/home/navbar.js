@@ -1,11 +1,8 @@
 angular.module('MyApp')
-  .controller('NavbarCtrl', function($scope, $auth) {
+  .controller('NavbarCtrl', ['$scope', 'attributesService', '$auth', function($scope, attributesService, $auth) {
+
     $scope.isAuthenticated = function() {
       return $auth.isAuthenticated();
     };
-
-    $scope.navCreateAttribute = function() {
-      console.log('HI');
-    };
-
-  });
+  }
+]);

@@ -31,7 +31,7 @@
       }
 
       function createResource(newResource) {
-        $http.resource('api/collections/resources', newResource).then(function(res) {
+        $http.post('api/collections/resources', newResource).then(function(res) {
           $rootScope.$broadcast('resource:added');
         });
       }

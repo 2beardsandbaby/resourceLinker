@@ -9,6 +9,10 @@
           <section>
             <form name="linkForm" action="">
             <div class="form-group">
+              <label for="newTitle">Resource Title</label>
+              <input class="form-control" type="text" name="newTitle" data-ng-model="resource.title" placeholder="Title">
+            </div>
+            <div class="form-group">
               <label for="newTitle">Resource Link</label>
               <input class="form-control" type="url" name="newlink" data-ng-model="resource.link" ng-model-options="{ updateOn: 'blur'}" placeholder="Link" required>
               <div ng-if="!linkForm.newlink.$error.url && !linkForm.newlink.$pristine" ng-init="resourcesCtl.getPreview(resource)">
@@ -18,7 +22,21 @@
             </div>
 
             <div class="form-group">
-              <button class="btn btn-primary" data-ng-click="resourcesCtl.getPreview(resource)">Create</button>
+              <label>Attributes:</label>
+              <div
+                isteven-multi-select
+                input-model="resourcesCtl.attributes"
+                output-model="resource.attributes"
+                button-label="icon name"
+                item-label="icon name maker"
+                tick-property="ticked"
+              >
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-primary" data-ng-click="resourcesCtl.createResource(resource)">Create</button>
             </div>
           </form>
 

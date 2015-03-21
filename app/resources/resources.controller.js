@@ -3,9 +3,21 @@
 
   angular
     .module('resources')
-    .controller('resourcesController', ['resourcesService', '$location', '$routeParams', '$auth',
-    '$scope',
-      function(resourcesService, $location, $routeParams, $auth, $scope) {
+    .controller('resourcesController', [
+      'attributesService',
+      'resourcesService',
+      '$location',
+      '$routeParams',
+      '$auth',
+      '$scope',
+      function(
+        attributesService,
+        resourcesService,
+        $location,
+        $routeParams,
+        $auth,
+        $scope
+      ) {
         var resourcesCtl = this;
         resourcesCtl.isAuthenticated = function() {
           return $auth.isAuthenticated();
@@ -24,7 +36,12 @@
           resourcesCtl.resources = resources;
         });
 
-        resourcesService.getResource($routeParams.postId).success(function(resource) {
+        resourcesCtl.attributes = [];
+        attributesService.getAttributes().success(function(attributes) {
+          resourcesCtl.attributes = attributes;
+        });
+
+        resourcesService.getResource($routeParams.resourceId).success(function(resource) {
           resourcesCtl.resource = resource;
         });
 
@@ -42,8 +59,6 @@
           resourcesService.deleteResource(id);
           $location.path('/resources');
         };
-
-
       }
     ]);
 })();

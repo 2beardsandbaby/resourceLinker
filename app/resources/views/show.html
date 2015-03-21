@@ -11,8 +11,15 @@
       <div class="row">
         <div class="col-sm-12">
           <section>
-              <p>{{resourcesCtl.resource.content}}</p>
-              <p ng-repeat="resourcesCtl.resource.attributes">{{attr}}</p>
+              <p>Link: {{resourcesCtl.resource.link}}</p>
+              <p>
+                Attributes: 
+                <ul>
+                  <li data-ng-repeat="attribute in resourcesCtl.resource.attributes">
+                    {{attribute.name}}
+                  </li>
+                </ul>
+              </p>
           </section>
         </div>
       </div>
