@@ -1,19 +1,22 @@
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading clearfix">
-      <h1 class="panel-title pull-left">{{resourcesCtl.resource.title}}</h1>
+      <h1 class="panel-title pull-left">{{resourcesCtl.resource.metaTitle}}</h1>
       <div class="btn-group pull-right">
         <a class="btn btn-warning" href="#/resources/{{resourcesCtl.resource._id}}/edit">Edit</a>
-        <a class="btn btn-danger" ng-click="resourcesCtl.deletePost(resourcesCtl.resource._id)">Delete</a>
+        <a class="btn btn-danger" ng-click="resourcesCtl.deleteResource(resourcesCtl.resource._id)">Delete</a>
       </div>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-sm-12">
           <section>
+              <h4>{{resourcesCtl.resource.title}}</h4>
+              <p><img ng-src="{{resourcesCtl.resource.photo}}" alt=""></p>
               <p>Link: {{resourcesCtl.resource.link}}</p>
+              <p>{{resourcesCtl.resource.description}}</p>
               <p>
-                Attributes: 
+                Attributes:
                 <ul>
                   <li data-ng-repeat="attribute in resourcesCtl.resource.attributes">
                     {{attribute.name}}

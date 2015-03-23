@@ -11,8 +11,15 @@
         getResource: getResource,
         createResource: createResource,
         editResource: editResource,
-        deleteResource: deleteResource
+        deleteResource: deleteResource,
+        getPreview: getPreview
       };
+
+      function getPreview(linkObj) {
+        return $http.post('/preview/linkPreview', linkObj).then(function (response) {
+          return response;
+        });
+      }
 
       function getResources() {
 

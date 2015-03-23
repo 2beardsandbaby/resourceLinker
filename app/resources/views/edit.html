@@ -6,8 +6,17 @@
         <div class="col-sm-12">
           <section>
             <div class="form-group">
-              <label for="resourceTitle">Post Title</label>
-              <input class="form-control" name="resourceTitle" type="text" data-ng-model="resourcesCtl.resource.title" value="{{resourcesCtl.resource.title}}">
+              <label for="resourceWebsiteTitle">Website Title</label>
+              <input class="form-control" name="resourceWebsiteTitle" type="text" data-ng-model="resourcesCtl.resource.title" value="{{resourcesCtl.resource.title}}">
+            </div>
+            <div class="form-group">
+              <label for="resourceTitle">User Title</label>
+              <input class="form-control" name="resourceMetaTitle" type="text" data-ng-model="resourcesCtl.resource.metaTitle" value="{{resourcesCtl.resource.metaTitle}}">
+            </div>
+            <div class="form-group">
+              <label for="resourcePhoto">Post Photo</label>
+              <input class="form-control" name="resourcePhoto" type="text" data-ng-model="resourcesCtl.resource.photo" value="{{resourcesCtl.resource.photo}}">
+              <img class="thumb" ng-src="{{resourcesCtl.resource.photo}}" alt="">
             </div>
             <div class="form-group">
               <label for="resourceLink">Resource Link</label>
@@ -15,7 +24,7 @@
             </div>
             <div class="form-group">
               <label>Attributes:</label>
-              <div     
+              <div
                 isteven-multi-select
                 input-model="resourcesCtl.attributes"
                 output-model="resource.attributes"
@@ -27,7 +36,7 @@
 
             </div>
             <div class="form-group">
-              <button class="btn btn-primary" data-ng-click="resourcesCtl.editPost(resourcesCtl.resource)">Update Post</button>
+              <button class="btn btn-primary" data-ng-click="resourcesCtl.editResource(resourcesCtl.resource)">Update Post</button>
             </div>
 
           </section>

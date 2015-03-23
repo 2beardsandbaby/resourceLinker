@@ -9,17 +9,29 @@
       '$location',
       '$routeParams',
       '$auth',
+      '$scope',
       function(
         attributesService,
         resourcesService,
         $location,
         $routeParams,
-        $auth
+        $auth,
+        $scope
       ) {
         var resourcesCtl = this;
         resourcesCtl.isAuthenticated = function() {
           return $auth.isAuthenticated();
         };
+
+        $scope.preview = {};
+
+        resourcesCtl.getPreview = function (link) {
+          resourcesService.getPreview(link).then(function (data) {
+            console.log(data);
+            $scope.preview = data.data;
+          });
+        };
+
         resourcesService.getResources().success(function(resources) {
           resourcesCtl.resources = resources;
         });
@@ -34,6 +46,9 @@
         });
 
         resourcesCtl.createResource = function(newResource) {
+          newResource.title = $scope.preview.title;
+          newResource.photo = $scope.preview.photo;
+          newResource.description = $scope.preview.description;
           resourcesService.createResource(newResource);
           $location.path('/resources');
         };
